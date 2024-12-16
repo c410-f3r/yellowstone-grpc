@@ -49,6 +49,10 @@ type BlocksMetaFilterMap = HashMap<String, SubscribeRequestFilterBlocksMeta>;
 #[derive(Debug, Clone, Parser)]
 #[clap(author, version, about)]
 struct Args {
+    /// Path of a certificate authority file
+    #[clap(long)]
+    ca_certificate: Option<PathBuf>,
+
     #[clap(short, long, default_value_t = String::from("http://127.0.0.1:10000"))]
     /// Service endpoint
     endpoint: String,
